@@ -43,25 +43,7 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<h1>dep-check</h1>
-				<form onSubmit={this.handleSubmit}>
-					<div>
-						<label htmlFor="owner">owner</label>
-						<input id="owner" onChange={this.handleChange} type="text" value={this.state.owner} />
-					</div>
-					<div>
-						<label htmlFor="repo">repo</label>
-						<input id="repo" onChange={this.handleChange} type="text" value={this.state.repo} />
-						<button type="submit">search</button>
-					</div>
-				</form>
-				<ul>
-					{Object.keys(this.state.dependencies).map((dep, i) => (
-						<li key={i}>
-							{dep}: {this.state.dependencies[dep]}
-						</li>
-					))}
-				</ul>
+				<h1>{process.env.REACT_APP_URL} {process.env.NODE_ENV}</h1>
 			</div>
 		);
 	}
